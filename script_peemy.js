@@ -359,6 +359,7 @@ function onCellClicked(cell) {
   let index = 0
   if (sameFocusedWordAndCell) {
     // Unfocus cell if no other alternative
+    refocus()
     if (vals.length == 1) { return; }
     index = (vals.indexOf(focusedWord) + 1) % vals.length;
   }
@@ -453,18 +454,29 @@ function initClueLists() {
 }
 
 function initCrossword() {
+  refocus();
+  inputField.addEventListener('blur', function() {
+    refocus();
+  });
+
   document.querySelectorAll('.popup--button_close').forEach(x => {x.onclick = disablePopup;});
 
     initGrid();
     initClueLists();
 
   function onKeyPress(event) {
+    event.preventDefault();
     if (isCharacterKeyPress(event)) {
       onWrite(event);
     }
   }
 
   document.addEventListener('keydown', onKeyPress);
+}
+
+function refocus() {
+  const inputField = document.getElementById('evilInput');
+  inputField.focus();
 }
 
 function isCharacterKeyPress(evt) {
@@ -503,6 +515,8 @@ function disablePopup() {
     document.querySelector('.popup--darken_background').classList.remove("active");
   }, 200);
 }
+
+enablePopupFail();
 
 // Call the initialization function when the page loads
 window.onload = initCrossword;
