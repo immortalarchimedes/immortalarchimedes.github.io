@@ -455,6 +455,7 @@ function initClueLists() {
 
 function initCrossword() {
   refocus();
+  const inputField = document.getElementById('evilInput');
   inputField.addEventListener('blur', function() {
     refocus();
   });
@@ -515,8 +516,6 @@ function disablePopup() {
     document.querySelector('.popup--darken_background').classList.remove("active");
   }, 200);
 }
-
-enablePopupFail();
 
 // Call the initialization function when the page loads
 window.onload = initCrossword;
