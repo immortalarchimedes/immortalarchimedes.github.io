@@ -58,7 +58,7 @@ const words = [
 function checkSolution(obj) {
     const joinedText = obj.cells.map(cell => {
         const cellElement = document.querySelector(cellToClassName(cell));
-        return cellElement ? cellElement.textContent : '';
+        return cellElement ? cellElement.querySelector(".cell--content").textContent : '';
     }).join('');
 
     return joinedText === obj.solution;
