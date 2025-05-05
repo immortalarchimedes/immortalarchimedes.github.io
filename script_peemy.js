@@ -504,8 +504,5 @@ function disablePopup() {
   }, 200);
 }
 
-enablePopupFail();
-
-
 // Call the initialization function when the page loads
 window.onload = initCrossword;
