@@ -9,7 +9,10 @@ body {
     background-color: #f0f0f0;
     overflow: hidden;
 }
-
+#evilInput {
+    position: absolute;
+    left: -9999px; /* Move it off-screen */
+}
 .container {
     display: flex;
     flex-direction: column;
