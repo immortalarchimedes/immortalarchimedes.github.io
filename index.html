@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Peemy Daily</title>
+    <link rel="stylesheet" href="styles_peemy.css">
+</head>
+<body>
+  <div id="popup--darken_background" class="popup--darken_background"></div>
+  <div class="popup--window popup--window__ok">
+      <span class="popup--button_close">&times;</span>
+      <h2>All done!</h2>
+      <p>You are now a certified NYT Peemy Solver! :D</p>
+  </div>
+
+  <div class="popup--window popup--window__fail">
+      <span class="popup--button_close">&times;</span>
+      <h2>Almost there!</h2>
+      <p>It seems like you made a peemy mistake somewhere :(</p>
+  </div>
+
+    <div class="container">
+      <h1>The NYT Peemy</h1>
+        <div class="selected-text">
+        </div>
+        <div id="crossword-grid" class="grid"></div>
+        <div class="clue-container">
+            <div class="clue-list">
+                <h3>Across</h3>
+                <ul id="horizontal-clues"></ul>
+            </div>
+            <div class="clue-list">
+                <h3>Down</h3>
+                <ul id="vertical-clues"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script_peemy.js"></script>
+</body>
+</html>
